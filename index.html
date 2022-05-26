@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+</head>
+
+<body>
+	<style type="text/css">
+		#namek {
+			background-image: url("namek.png");
+			width: 863px;
+			height: 600px
+		}
+
+		.player {
+			position: absolute;
+			width: 43px;
+			height: 62px;
+			background-image: url("goku.png");
+
+		}
+
+		.minicell {
+			position: absolute;
+			width: 43px;
+			height: 53px;
+			background-image: url("minicell.png");
+			left: 815px;
+			top: 70px;
+		}
+	</style>
+	</style>
+
+	<div id="namek">
+		<div id="players">
+			<div class='player' style='left: 25px;  top: 85px'></div>;'
+		</div>
+		<div class="minicell"></div>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		var player = {
+			left: 25,
+			top: 85
+		}
+
+		var minicell = [{
+			left: 450,
+			top: 250
+		}]
+
+		function drawPlayer() {
+			content = "<div class= 'player' style= 'left:" + player.left + "px; top:" + player.top + "'></div>";
+			document.getElementById("players").innerHTML =
+				content;
+		}
+
+		document.onkeydown = function (e) {
+			console.log(e);
+
+			if (e.keyCode == 37) {
+				if (player.left > 0) {
+					player.left -= 10;
+
+					console.log("left");
+				}
+			}
+			if (e.keyCode == 39) {
+				if (player.left < 1180) {
+					player.left += 10;
+
+					console.log("rigth");
+				}
+			}
+			if (e.keyCode == 38) {
+				if (player.top > 570) {
+					player.top -= 10;
+
+
+					console.log("up");
+				}
+			}
+			if (e.keyCode == 40) {
+				if (player.top < 625) {
+					player.top += 10;
+
+					console.log("down");
+				}
+			}
+
+			drawPlayer();
+
+		}
+		drawPlayer();
+
+	</script>
+</body>
+
+</html>
+}
